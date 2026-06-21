@@ -1,0 +1,41 @@
+{
+  "extinctions": {
+    "n": 32,
+    "n_spacings": 31,
+    "r": 0.617502,
+    "r_se": 0.038291,
+    "cv": 0.446,
+    "brody_beta": 1.4069,
+    "ks_poisson": 0.307739,
+    "ks_goe": 0.066758,
+    "ks_gue": 0.085685,
+    "best_fit": "GOE",
+    "mean_spacing_myr": 16.29
+  },
+  "radiations": {
+    "n": 29,
+    "n_spacings": 28,
+    "r": 0.628148,
+    "r_se": 0.044936,
+    "cv": 0.5017,
+    "brody_beta": 1.1298,
+    "ks_poisson": 0.32196,
+    "ks_goe": 0.098475,
+    "ks_gue": 0.143866,
+    "best_fit": "GOE",
+    "mean_spacing_myr": 18.75
+  },
+  "mixed_clades": {
+    "n": 471,
+    "n_spacings": 470,
+    "r": 0.359262,
+    "r_se": 0.012691,
+    "cv": 1.0402,
+    "brody_beta": 0.01,
+    "ks_poisson": 0.040963,
+    "ks_goe": 0.254618,
+    "ks_gue": 0.321627,
+    "best_fit": "Poisson",
+    "mean_spacing_myr": 1.14
+  }
+}

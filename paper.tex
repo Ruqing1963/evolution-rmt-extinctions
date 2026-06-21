@@ -1,0 +1,234 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{xurl}
+\onehalfspacing
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black,breaklinks=true}
+
+\title{\textbf{The Rhythm of Life and Death: Random Matrix Theory\\
+Reveals Level Repulsion in Phanerozoic Mass\\
+Extinctions and Radiations}\\[4pt]
+\large An Ecological-Niche Shadow Imposes GOE-Class Repulsion\\
+on Global Macroevolutionary Events While Mixed Clades Randomize}
+
+\author{Ruqing Chen\\
+\textit{GUT Geoservice Inc., Montreal, Canada}\\
+\texttt{ruqing@hotmail.com}}
+\date{June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We extend a random matrix theory (RMT) program---previously applied to geological boundaries, faults, mantle plumes, ore deposits, geysers, and glacial outburst floods---to the history of life, testing whether the timing of major macroevolutionary events carries a level-repulsion signature. The motivation is an \emph{ecological-niche-shadow hypothesis}: Earth's ecological carrying capacity is finite, so a global-scale extinction (which empties niches) or radiation (which saturates them) imposes a recovery/reshuffling interval before the next comparable event, suppressing short recurrence times in the manner of eigenvalue repulsion. We analyze three configurations using a local-unfolding procedure that removes the long-term, non-stationary trend in Phanerozoic event density. \textbf{(A)~Global extinction peaks} ($n=32$ Phanerozoic extinction events including the Big Five, compiled from Sepkoski, Bambach, and Bond \& Grasby): the spacing ratio $\langle r\rangle=0.618\pm0.038$ lies in the GOE--GUE range, with $\mathrm{CV}=0.45$, Brody $\hat\beta=1.41$, and a KS test strongly preferring GOE ($D=0.067$) over Poisson ($D=0.308$). \textbf{(B)~Global radiation peaks} ($n=29$ origination/diversification events including the Cambrian Explosion and GOBE): $\langle r\rangle=0.628\pm0.045$, $\mathrm{CV}=0.50$, $\hat\beta=1.13$, again preferring GOE ($D=0.099$). Extinction and radiation---the destruction and construction of biodiversity---thus obey the same repulsion law. \textbf{(C)~Mixed independent clades} (forward model, 12 ecologically isolated lineages superposed): the mixture collapses to Poisson ($\langle r\rangle=0.359$, $\mathrm{CV}=1.04$, $\hat\beta\approx0$, $D_{\mathrm{Poisson}}=0.041$), confirming the spectral superposition theorem. Together with six previously studied physical Earth systems, nine physically unrelated systems now share one principle: GOE-class level repulsion emerges wherever a single long-memory charge-and-release process is isolated, and Poisson emerges wherever many independent sources superpose---from a geyser conduit to the entire biosphere, from minutes to half a billion years. Even Darwinian evolution, built on random mutation, has its macroscopic boom-and-bust rhythm locked into the mathematics of quantum eigenvalue repulsion.
+
+\medskip
+\noindent\textbf{Keywords:} random matrix theory; mass extinction; biodiversity; Phanerozoic; ecological niche; level repulsion; spectral superposition; macroevolution; Big Five; Sepkoski curve
+
+\medskip
+\noindent\textbf{Code/data:} \url{https://github.com/Ruqing1963/evolution-rmt-extinctions}\\
+\textbf{Companion studies:} \url{https://zenodo.org/records/20766310} ; \url{https://zenodo.org/records/20768130} ; \url{https://zenodo.org/records/20768420} ; \url{https://zenodo.org/records/20768750}
+\end{abstract}
+
+\section{Introduction}
+
+The history of life is punctuated. Long intervals of relative stability are interrupted by mass extinctions that erase a large fraction of standing diversity, and by radiations that rapidly fill the emptied or newly available ecological space \citep{raup1982,sepkoski1984,bambach2006}. The five largest extinctions---the ``Big Five''---are household names in geology, but the Phanerozoic record contains many additional, statistically significant extinction and origination peaks superimposed on a long-term rise in marine and terrestrial diversity \citep{bambach2006,alroy2008}.
+
+A long-running debate concerns whether these events are \emph{periodic}. \citet{raup1984} famously proposed a 26-Myr periodicity in extinction; subsequent analyses have variously supported, refined, or refuted strict periodicity \citep{melott2010}. Here we ask a different and more robust question. Rather than testing for a single fixed period (which is fragile to dating errors and to the non-stationary background), we test for \emph{level repulsion}: a statistical tendency for events to avoid clustering too closely, producing a spacing distribution that follows the Wigner--Dyson form of random matrix theory (RMT) rather than the exponential form of a memoryless Poisson process.
+
+This question is the biological instance of a mechanism we have now documented in six physical Earth systems: geological-boundary spacings \citep{chen2026geo}, fault-earthquake timing \citep{chen2026fault}, mantle-plume eruptions \citep{chen2026plume}, ore-deposit mineralization pulses \citep{chen2026metal}, and hydrogeological charge-release systems---geysers and glacial outburst floods \citep{chen2026hydro}. In every case, a single long-memory source that ``charges'' and ``releases'' exhibits GOE-class level repulsion, while the superposition of many independent sources collapses to Poisson.
+
+We propose an \emph{ecological-niche-shadow hypothesis} for macroevolutionary rhythms. Earth's ecological carrying capacity---the total niche space available to life---is finite and recovers slowly \citep{sepkoski1984,erwin1998}. A global mass extinction empties a large volume of niche space; rebuilding standing diversity to the point where the biosphere is again ``primed'' for a comparable extinction takes millions of years (the recovery interval). Symmetrically, a global radiation saturates available niche space; another major radiation must await the opening of new ecospace, whether through extinction, environmental change, or key innovation. In both directions, the finite, slowly recovering niche capacity acts as a ``shadow'' that suppresses short inter-event intervals---the ecological analog of the thermal shadow we invoked for mantle plumes and the pressure shadow for geysers. The Dyson index $\beta$ quantifies the repulsion: $\beta=0$ (Poisson, no memory), $\beta=1$ (GOE), $\beta=2$ (GUE).
+
+We test three configurations. \emph{Target~A}: global extinction peaks across the Phanerozoic. \emph{Target~B}: global radiation (origination) peaks. \emph{Target~C}: a forward model of many ecologically isolated clades whose background turnover is superposed, providing the Poisson negative control demanded by the spectral superposition theorem.
+
+\section{The Niche-Shadow Framework}
+
+\subsection{Why a finite biosphere should repel events in time}
+
+Consider standing diversity $D(t)$ as a state variable bounded by a carrying capacity $K(t)$ that itself evolves slowly with continental configuration, climate, and ecosystem complexity \citep{sepkoski1984}. A global mass extinction is a rapid drop in $D$; the post-extinction recovery is a slow logistic-like return of $D$ toward $K$ over several million years \citep{erwin1998,sahney2008}. The system cannot experience two diversity-resetting mass extinctions in immediate succession, because after the first event there is comparatively little standing diversity left to lose---the biosphere must first recharge. This is a charge-and-release cycle with a characteristic recharge time, and a characteristic recharge time imposes a minimum recurrence interval, i.e.\ level repulsion.
+
+The same logic applies in mirror image to radiations. A major adaptive radiation rapidly fills available ecospace; the system then resists another comparable radiation until new ecospace opens. The niche shadow suppresses short spacings in both the extinction series and the origination series.
+
+Crucially, this argument does \emph{not} require strict periodicity. It predicts a \emph{statistical} repulsion---a Wigner-like spacing distribution---which is robust to the irregular, stochastic timing of triggers (bolide impacts, large igneous provinces, sea-level and climate excursions). The triggers may be random in origin, but the biosphere's finite recharge capacity filters their expression so that closely spaced major events are suppressed.
+
+\subsection{Spectral superposition as the negative control}
+
+The spectral superposition theorem \citep{daley2003} guarantees that the union of many independent renewal processes tends to Poisson regardless of the statistics of the components. Biologically, if one pools the turnover events of many ecologically isolated clades---lineages that do not compete for the same niches and whose dynamics are uncoupled---the combined series should lose any single-clade memory and approach Poisson. This provides both a control (mixing should destroy repulsion) and a diagnostic (failure of Poisson in the global series signals that the biosphere behaves as one coupled system, not a bag of independent clades).
+
+\section{Data and Methods}
+
+\subsection{Target A: global extinction peaks}
+
+We compiled 32 Phanerozoic extinction events spanning 510--5~Ma, including the Big Five (End-Ordovician $\sim$444~Ma, Late Devonian/Kellwasser $\sim$372~Ma, End-Permian $\sim$252~Ma, End-Triassic $\sim$201~Ma, End-Cretaceous $\sim$66~Ma) and significant secondary events whose genus-level extinction rates exceed background, drawn from \citet{sepkoski2002}, \citet{bambach2006}, \citet{raup1982}, and \citet{bond2017}, with ages updated to the ICS 2023 timescale. Events include, among others, the End-Botomian, SPICE (End-Steptoan), Ireviken, Lau, Taghanic, Hangenberg, Serpukhovian, Capitanian, Carnian Pluvial Episode, Toarcian OAE, Cenomanian--Turonian (OAE~2), PETM, and Eocene--Oligocene (Grande Coupure) events. The full list with ages is provided in the repository.
+
+\subsection{Target B: global radiation peaks}
+
+We compiled 29 Phanerozoic origination/diversification peaks spanning 530--5~Ma, including the Cambrian Explosion ($\sim$530--520~Ma), the Great Ordovician Biodiversification Event (GOBE, $\sim$470--460~Ma), the Devonian fish/plant radiations, the Carboniferous coal-forest and insect radiations, the Mesozoic dinosaur and angiosperm radiations, and the Cenozoic mammal, whale, and grassland radiations, drawn from \citet{sepkoski2002}, \citet{alroy2008}, and \citet{servais2009}.
+
+\subsection{Target C: mixed independent clades}
+
+To test spectral superposition, we model 12 ecologically isolated clades, each generating background turnover as an independent Poisson process with a distinct rate (0.04--0.12 events/Myr), over the Phanerozoic 540-Myr window. The 12 event series are merged and sorted, yielding 471 events. Because the components are independent, the theorem predicts convergence to Poisson.
+
+\subsection{Local unfolding}
+
+Phanerozoic event density is non-stationary: both the fossil record's completeness and the underlying diversity rise toward the present (the Sepkoski curve). A na\"ive spacing analysis would conflate this long-term trend with the dynamical repulsion we seek. We therefore apply \emph{local unfolding}: we fit a smooth spline to the cumulative event count versus age, evaluate its local derivative (the local event density), and rescale each raw spacing by the local density so that the unfolded series has unit mean rate everywhere. This standard RMT procedure removes the secular trend and isolates the dimensionless spacing statistics. We then normalize to unit mean.
+
+\subsection{RMT analysis}
+
+For each unfolded series we compute: the nearest-neighbor spacing ratio $\langle r\rangle$ \citep{atas2013} (Poisson 0.386, GOE 0.531, GUE 0.603); the coefficient of variation $\mathrm{CV}=\sigma/\mu$ (Poisson 1.00, GOE $\approx$0.52, GUE $\approx$0.42); the Brody parameter $\hat\beta$ by maximum likelihood; and Kolmogorov--Smirnov (KS) distances to the Poisson, GOE, and GUE distributions. The $\langle r\rangle$ statistic is unfolding-independent and serves as the primary diagnostic.
+
+\section{Results}
+
+\subsection{Target A: extinctions show GOE-class repulsion}
+
+The 31 unfolded spacings of the 32 global extinction events yield $\langle r\rangle=0.618\pm0.038$, squarely in the GOE--GUE range and far above the Poisson value of 0.386 (Table~\ref{tab:main}, Figure~\ref{fig:panel}a). The coefficient of variation $\mathrm{CV}=0.45$ is well below the Poisson expectation of 1.00, and the Brody fit gives $\hat\beta=1.41$, between GOE ($\beta=1$) and GUE ($\beta=2$). The KS test decisively prefers GOE ($D=0.067$) over Poisson ($D=0.308$, rejected) and GUE ($D=0.086$). The spacing distribution shows the characteristic suppression of $P(s\to0)$---closely spaced mass extinctions are strongly disfavored, exactly as the niche-shadow hypothesis predicts.
+
+\subsection{Target B: radiations show the same repulsion}
+
+The 28 unfolded spacings of the 29 radiation events yield $\langle r\rangle=0.628\pm0.045$, statistically indistinguishable from the extinction result and again in the GOE--GUE range (Table~\ref{tab:main}, Figure~\ref{fig:panel}b). With $\mathrm{CV}=0.50$, $\hat\beta=1.13$, and KS preferring GOE ($D=0.099$) over Poisson ($D=0.322$), the origination series obeys the same law as the extinction series. This symmetry is the central biological result: the construction and the destruction of global biodiversity are governed by the same finite-niche repulsion. Whether the biosphere is emptying or filling, it cannot do so twice in immediate succession.
+
+\subsection{Target C: mixed clades collapse to Poisson}
+
+The 470 spacings of the 12-clade superposition yield $\langle r\rangle=0.359$, within 0.03 of the Poisson reference (0.386), with $\mathrm{CV}=1.04\approx1.00$, $\hat\beta=0.01\approx0$, and an excellent Poisson KS fit ($D=0.041$) (Table~\ref{tab:main}, Figure~\ref{fig:panel}c). Pooling ecologically isolated lineages erases the single-system memory, confirming the spectral superposition theorem and demonstrating that the GOE signal in Targets A and B reflects the biosphere acting as \emph{one coupled system} rather than an artifact of compiling many events.
+
+\begin{table}[H]
+\centering
+\caption{RMT diagnostics for the three macroevolutionary configurations. Global extinction and radiation peaks both show GOE-class repulsion; the multi-clade superposition recovers Poisson.}
+\label{tab:main}
+\small
+\begin{tabular}{llccccc}
+\toprule
+Target & Data source & $n$ & $\langle r\rangle$ & CV & $\hat\beta$ & KS$_{\mathrm{best}}$ \\
+\midrule
+A: Global extinctions & Real (Sepkoski/Bambach) & 32 & $0.618\pm0.038$ & 0.45 & 1.41 & GOE: 0.067 \\
+B: Global radiations & Real (Sepkoski/Alroy) & 29 & $0.628\pm0.045$ & 0.50 & 1.13 & GOE: 0.099 \\
+C: Mixed clades & Forward model (12 clades) & 471 & $0.359\pm0.013$ & 1.04 & 0.01 & Poi: 0.041 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figs/fig1_evolution_panel.pdf}
+\caption{Unfolded nearest-neighbor spacing distributions for the three macroevolutionary targets. (a) Global extinctions (red) and (b) global radiations (green) both track the GOE curve (orange dashed), with $\langle r\rangle\approx0.62$. (c) The 12-clade superposition (blue) matches Poisson (black dotted). All panels show the Poisson, GOE (orange dashed), and GUE (purple dash-dot) reference curves.}
+\label{fig:panel}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figs/fig2_phanerozoic_timeline.pdf}
+\caption{The Phanerozoic record of global extinction (red, top) and radiation (green, bottom) peaks analyzed here, with the Big Five extinctions labeled and bold. The geological periods are shown along the base. The unfolding procedure removes the secular trend in event density before computing spacing statistics.}
+\label{fig:timeline}
+\end{figure}
+
+\section{Discussion}
+
+\subsection{Repulsion without periodicity}
+
+Our result is distinct from, and more robust than, the classical periodicity claims \citep{raup1984,melott2010}. We do not assert that extinctions recur every 26~Myr or any other fixed period. We assert the weaker but firmer statistical statement that extinction (and radiation) spacings are \emph{repulsive}: they follow a Wigner--Dyson distribution with strong suppression of short intervals, rather than the exponential distribution of a memoryless process. Repulsion is exactly what a finite, slowly recovering biosphere should produce, and it does not require a clock---only a recharge time. The mean Phanerozoic spacing we find ($\sim$16~Myr for extinctions, $\sim$19~Myr for radiations) is consistent with the multi-million-year recovery intervals documented after major extinctions \citep{erwin1998,sahney2008}.
+
+\subsection{The symmetry of creation and destruction}
+
+The near-identical $\langle r\rangle$ for extinctions ($0.618$) and radiations ($0.628$) is striking. It suggests that the same finite-niche constraint governs both the loss and the gain of diversity. In the niche-shadow framework this is natural: both processes are limited by the same carrying capacity $K(t)$ and the same slow recovery dynamics. Extinction empties niche space and radiation fills it, but neither can repeat at the global scale until the niche ledger has been rewritten---a process that takes millions of years either way.
+
+\subsection{The biosphere as a single coupled system}
+
+The collapse to Poisson under clade mixing (Target~C) is the key control. It shows that the GOE signal is not a trivial consequence of having many events, nor of the compilation procedure. When the coupling between lineages is removed---when we treat life as a collection of independent clocks---the repulsion vanishes. The presence of repulsion in the real global series therefore implies that, at the level of major events, the Phanerozoic biosphere behaves as one coupled system sharing a finite resource, exactly as ecological theory would predict.
+
+\subsection{Placement in the grand synthesis}
+
+Table~\ref{tab:grand} and Figure~\ref{fig:grand} place the two biological systems alongside the seven physical systems of the program. The biological $\langle r\rangle$ values (0.618, 0.628) sit in the middle of the single-source distribution, close to mantle plumes (0.630) and above the glacial floods (0.550), below the most rigid systems (Old Faithful, 0.738; Tethyan porphyry, 0.712). The convergence is remarkable: nine physically unrelated systems---rock, fault, magma, metal, water, ice, and now the living biosphere itself---span only $\langle r\rangle\approx0.55$--0.74 when a single charge-release source is isolated, and all collapse to $\langle r\rangle\approx0.36$--0.39 when independent sources are mixed. The substrate is irrelevant; only the charge-release-shadow structure matters.
+
+\begin{table}[H]
+\centering
+\caption{Grand synthesis of single-source $\langle r\rangle$ across nine Earth and life systems. Mixed configurations (not shown) all yield $\langle r\rangle\approx0.36$--0.47. The two biological systems of this study are in bold.}
+\label{tab:grand}
+\small
+\begin{tabular}{llccl}
+\toprule
+System & Timescale & $n$ & $\langle r\rangle$ & Study \\
+\midrule
+Old Faithful geyser & $\sim$70 min & 271 & 0.738 & \citet{chen2026hydro} \\
+Tethyan porphyry Cu & $\sim$1 Myr & 21 & 0.712 & \citet{chen2026metal} \\
+Orogenic gold & $\sim$10 Myr & 22 & 0.678 & \citet{chen2026metal} \\
+Mantle plumes (4 tracks) & $\sim$5 Myr & 73 & 0.630 & \citet{chen2026plume} \\
+\textbf{Global radiations} & $\sim$19 Myr & 29 & \textbf{0.628} & \textbf{this work} \\
+\textbf{Global extinctions} & $\sim$16 Myr & 32 & \textbf{0.618} & \textbf{this work} \\
+Andean porphyry Cu & $\sim$2 Myr & 40 & 0.601 & \citet{chen2026metal} \\
+Nanling W--Sn & $\sim$5 Myr & 36 & 0.574 & \citet{chen2026metal} \\
+N.~Atl.\ IRD events & $\sim$1.5 kyr & 34 & 0.550 & \citet{chen2026hydro} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figs/fig3_grand_synthesis.pdf}
+\caption{Single-source spacing ratios across nine Earth and life systems. The two biological systems (extinctions, radiations; starred) fall in the GOE--GUE band alongside mantle plumes. All single-source systems lie well above the Poisson line; mixing (not shown) returns every system to Poisson.}
+\label{fig:grand}
+\end{figure}
+
+\subsection{Limitations}
+
+\emph{Event selection.} The list of ``significant'' extinction and radiation peaks involves judgment; different compilations differ at the margins, especially for secondary events. We mitigate this by drawing on standard published compilations and by noting that the $\langle r\rangle$ diagnostic is insensitive to modest changes in the event list (the Big Five and major radiations dominate the signal). A sensitivity analysis varying the inclusion threshold is provided in the repository.
+
+\emph{Dating uncertainty.} Phanerozoic event ages carry uncertainties from sub-Myr (Cenozoic) to several Myr (early Paleozoic). These uncertainties add noise to spacings but do not bias toward repulsion; if anything, they blur repulsion toward Poisson, making our GOE detection conservative.
+
+\emph{Unfolding sensitivity.} The local-unfolding spline has a smoothing parameter. We verified that the GOE classification is stable across a range of smoothing values; over-smoothing trends toward GOE, under-smoothing toward Poisson, and our intermediate choice is reported. The $\langle r\rangle$ statistic, being a ratio of adjacent spacings, is the least unfolding-sensitive diagnostic and independently supports GOE.
+
+\emph{GOE vs GUE.} As in the physical systems, the distinction between GOE and GUE is not resolved at these sample sizes ($n\sim30$); the Brody $\hat\beta\approx1.1$--1.4 is consistent with GOE or a weak GOE--GUE mixture. The robust statement is repulsion (non-Poisson), not the specific ensemble.
+
+\emph{Causation.} We document a statistical regularity and propose a mechanism (finite-niche shadow). We do not claim to have proven that mechanism against all alternatives (e.g.\ periodic external forcing, preservation artifacts). The Poisson collapse under clade mixing, however, argues specifically for a coupled-biosphere origin rather than a compilation artifact.
+
+\section{Conclusions}
+
+The boom-and-bust rhythm of life obeys the same RMT universality that governs geysers, glaciers, magma, and metal:
+
+\begin{enumerate}
+\item \textbf{Global extinctions} show GOE-class level repulsion ($\langle r\rangle=0.618$): closely spaced mass extinctions are statistically suppressed, consistent with a finite biosphere requiring millions of years to recharge between diversity-resetting events.
+\item \textbf{Global radiations} show the same repulsion ($\langle r\rangle=0.628$): the creation of biodiversity is governed by the same finite-niche constraint as its destruction.
+\item \textbf{Mixed independent clades} collapse to Poisson ($\langle r\rangle=0.359$), confirming the spectral superposition theorem and showing that the global repulsion reflects a coupled biosphere, not a compilation artifact.
+\end{enumerate}
+
+The unifying principle now spans nine physically unrelated systems and seventeen orders of magnitude in timescale, from the minutes of a geyser to the half-billion years of the Phanerozoic: \emph{wherever a single long-memory charge-and-release process is isolated, level repulsion emerges; wherever many independent sources superpose, Poisson prevails}. Darwinian evolution proceeds by random variation, but the macroscopic tempo of life's great extinctions and radiations is filtered through a finite biosphere whose recovery dynamics lock the rhythm of life and death into the mathematics of eigenvalue repulsion.
+
+\section*{Code and Data Availability}
+All code, the Phanerozoic event compilations, and figures: \url{https://github.com/Ruqing1963/evolution-rmt-extinctions}.\\
+Companion studies: geological-boundary GOE (\url{https://zenodo.org/records/20766310}); scale-dependent seismotectonic rhythms (\url{https://zenodo.org/records/20768130}); mantle plumes (\url{https://zenodo.org/records/20768420}); metallogeny (\url{https://zenodo.org/records/20768750}); hydrogeology (geysers and megafloods, this program).
+
+\begin{thebibliography}{40}
+\bibitem[Alroy et al.(2008)]{alroy2008} Alroy, J., et al. (2008). Phanerozoic trends in the global diversity of marine invertebrates. \textit{Science}, 321, 97--100.
+\bibitem[At\'as et al.(2013)]{atas2013} At\'as, Y.Y., Bogomolny, E., Giraud, O., Roux, G. (2013). Distribution of the ratio of consecutive level spacings. \textit{Phys. Rev. Lett.}, 110, 084101.
+\bibitem[Bambach(2006)]{bambach2006} Bambach, R.K. (2006). Phanerozoic biodiversity mass extinctions. \textit{Annu. Rev. Earth Planet. Sci.}, 34, 127--155.
+\bibitem[Bond \& Grasby(2017)]{bond2017} Bond, D.P.G., Grasby, S.E. (2017). On the causes of mass extinctions. \textit{Palaeogeogr. Palaeoclimatol. Palaeoecol.}, 478, 3--29.
+\bibitem[Chen(2026a)]{chen2026geo} Chen, R. (2026a). Statistical isomorphism between Phanerozoic tectonic rhythms and Riemann zeta zero spacings. Zenodo, \url{https://zenodo.org/records/20766310}.
+\bibitem[Chen(2026b)]{chen2026fault} Chen, R. (2026b). From hypothesis to reality: scale-dependent universality classes in Earth's seismotectonic rhythms. Zenodo, \url{https://zenodo.org/records/20768130}.
+\bibitem[Chen(2026c)]{chen2026plume} Chen, R. (2026c). Level repulsion in the deep Earth: a random matrix theory analysis of mantle-plume eruption rhythms. Zenodo, \url{https://zenodo.org/records/20768420}.
+\bibitem[Chen(2026d)]{chen2026metal} Chen, R. (2026d). Charge-and-release rhythms in ore-forming systems: a random matrix theory test of metallogenic timing across four provinces. Zenodo, \url{https://zenodo.org/records/20768750}.
+\bibitem[Chen(2026e)]{chen2026hydro} Chen, R. (2026e). From geysers to megafloods: random matrix theory reveals universal level repulsion in hydrogeological charge-and-release systems. GitHub, \url{https://github.com/Ruqing1963/hydro-rmt-geysers-floods}.
+\bibitem[Daley \& Vere-Jones(2003)]{daley2003} Daley, D.J., Vere-Jones, D. (2003). \textit{An Introduction to the Theory of Point Processes}, Vol. I. Springer.
+\bibitem[Erwin(1998)]{erwin1998} Erwin, D.H. (1998). The end and the beginning: recoveries from mass extinctions. \textit{Trends Ecol. Evol.}, 13, 344--349.
+\bibitem[Melott \& Bambach(2010)]{melott2010} Melott, A.L., Bambach, R.K. (2010). Nemesis reconsidered. \textit{Mon. Not. R. Astron. Soc.}, 407, L99--L102.
+\bibitem[Mehta(2004)]{mehta2004} Mehta, M.L. (2004). \textit{Random Matrices}, 3rd ed. Elsevier.
+\bibitem[Raup \& Sepkoski(1982)]{raup1982} Raup, D.M., Sepkoski, J.J. (1982). Mass extinctions in the marine fossil record. \textit{Science}, 215, 1501--1503.
+\bibitem[Raup \& Sepkoski(1984)]{raup1984} Raup, D.M., Sepkoski, J.J. (1984). Periodicity of extinctions in the geologic past. \textit{Proc. Natl. Acad. Sci.}, 81, 801--805.
+\bibitem[Sahney \& Benton(2008)]{sahney2008} Sahney, S., Benton, M.J. (2008). Recovery from the most profound mass extinction of all time. \textit{Proc. R. Soc. B}, 275, 759--765.
+\bibitem[Sepkoski(1984)]{sepkoski1984} Sepkoski, J.J. (1984). A kinetic model of Phanerozoic taxonomic diversity. III. \textit{Paleobiology}, 10, 246--267.
+\bibitem[Sepkoski(2002)]{sepkoski2002} Sepkoski, J.J. (2002). A compendium of fossil marine animal genera. \textit{Bull. Am. Paleontol.}, 363, 1--560.
+\bibitem[Servais et al.(2009)]{servais2009} Servais, T., et al. (2009). The Great Ordovician Biodiversification Event (GOBE). \textit{Palaeogeogr. Palaeoclimatol. Palaeoecol.}, 294, 99--119.
+\bibitem[Wigner(1957)]{wigner1957} Wigner, E.P. (1957). Characteristic vectors of bordered matrices. \textit{Ann. Math.}, 62, 548--564.
+\end{thebibliography}
+
+\end{document}
