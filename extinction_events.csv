@@ -1,0 +1,33 @@
+event_number,age_ma,event_name,big_five
+1,510,"End-Botomian",no
+2,502,"End-Toyonian",no
+3,497,"Dresbachian",no
+4,488,"End-Steptoan(SPICE)",no
+5,470,"Late Arenig",no
+6,444,"End-Ordovician",yes
+7,428,"Ireviken",no
+8,424,"Lau/Kozlowskii",no
+9,407,"Early Devonian",no
+10,388,"Taghanic",no
+11,372,"Kellwasser(F-F)",yes
+12,359,"Hangenberg",no
+13,331,"Serpukhovian",no
+14,305,"Kasimovian",no
+15,273,"Olsons",no
+16,260,"Capitanian",no
+17,252,"End-Permian",yes
+18,249,"Smithian-Spathian",no
+19,233,"Carnian Pluvial",no
+20,215,"Late Norian",no
+21,201,"End-Triassic",yes
+22,183,"Toarcian OAE",no
+23,170,"Bajocian",no
+24,145,"J-K boundary",no
+25,116,"Aptian OAE1a",no
+26,94,"Cenomanian-Turonian",no
+27,84,"Santonian",no
+28,66,"End-Cretaceous",yes
+29,56,"PETM",no
+30,34,"Eocene-Oligocene",no
+31,14,"Mid-Miocene",no
+32,5,"Messinian",no
