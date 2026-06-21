@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: >-
+  The Rhythm of Life and Death: Random Matrix Theory
+  Reveals Level Repulsion in Phanerozoic Mass
+  Extinctions and Radiations
+message: If you use this software or data, please cite it using this metadata.
+type: software
+authors:
+  - given-names: Ruqing
+    family-names: Chen
+    email: ruqing@hotmail.com
+    affiliation: 'GUT Geoservice Inc., Montreal, Canada'
+repository-code: 'https://github.com/Ruqing1963/evolution-rmt-extinctions'
+abstract: >-
+  Random matrix theory analysis of Phanerozoic macroevolutionary rhythms.
+  Global extinction peaks (32 events) and radiation peaks (29 events) both show
+  GOE-class level repulsion (r-bar = 0.618 and 0.628), consistent with a finite
+  biosphere whose ecological-niche shadow imposes multi-million-year recovery
+  intervals. A 12-clade superposition collapses to Poisson (r-bar = 0.359),
+  confirming the spectral superposition theorem. Sixth in a unified RMT program
+  spanning nine Earth and life systems from geysers to the Phanerozoic.
+keywords:
+  - random matrix theory
+  - mass extinction
+  - biodiversity
+  - Phanerozoic
+  - ecological niche
+  - level repulsion
+  - spectral superposition
+  - macroevolution
+  - Big Five
+  - Sepkoski curve
+license: MIT
+version: 1.0.0
+date-released: '2026-06-21'
